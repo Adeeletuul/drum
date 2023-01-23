@@ -1,6 +1,6 @@
 import React from "react";
 import DrumPad from "./DrumPad";
-import data from "./data";
+import data from "../data";
 
 const DrumPads = ({ handleClick }) => {
   return (

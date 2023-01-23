@@ -1,5 +1,5 @@
-import DrumPads from "./DrumPads";
-import SoundName from "./SoundName";
+import DrumPads from "./components/DrumPads";
+import SoundName from "./components/SoundName";
 import data from "./data";
 import { useEffect, useState } from "react";
 
