@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import DrumPads from "./DrumPads";
+import SoundName from "./SoundName";
+import data from "./data";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [sound, setSound] = useState("");
+
+  const playAudio = (key) => {
+    const drumPad = data.find((elem) => elem.keyName === key);
+    if (drumPad) {
+      const audio = document.getElementById(key);
+      audio.pause();
+      audio.currentTime = 0;
+      audio.play();
+      setSound(drumPad.id);
+    }
+  };
+
+  const handleClick = (keyName) => {
+    playAudio(keyName);
+  };
+
+  const handleKeyPress = (event) => {
+    playAudio(event.key.toUpperCase());
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress, false);
+    return () => window.removeEventListener("keydown", handleKeyPress, false);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main id="drum-machine">
+      <SoundName name={sound} />
+      <DrumPads handleClick={handleClick} />
+    </main>
   );
 }
 

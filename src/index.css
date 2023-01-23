@@ -1,13 +1,79 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#drum-machine{
+  background-color: #FFFFE8;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+#display{
+  background-image: linear-gradient(to right, #FF9AA2,#FFB7B2,#FFDAC1,#E2F0CB,#B5EAD7,#C7CEEA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  font-size: 100px;
+  font-weight: 800;
+  
+}
+
+#pads{
+  display: flex;
+  flex-direction: row;
+}
+
+.drum-pad{
+  height: 200px;
+  width: 70px;
+  margin: 2px;
+  color: #fdfcfc;
+  font-size: 50px;
+  font-weight: 700;
+  -webkit-text-stroke: 2px rgb(202, 202, 202);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#bird{
+  background-color: #FEDCDB;
+}
+
+#cat{
+  background-color: #FBE3D9;
+}
+
+#dog{
+  background-color: #FDF1C9;
+}
+
+#elephant{
+  background-color: #F5FBCD;
+}
+
+#guineapig{
+  background-color: #DBFBCC;
+}
+
+#horse{
+  background-color: #CEFBE4;
+}
+
+#lion{
+  background-color: #CCF8FB;
+}
+
+#rooster{
+  background-color: #D9E6F7;
+}
+
+#sheep{
+  background-color: #E2DBFC;
+}
+
